@@ -1,2 +1,3 @@
-##Hapi Web Server
-Basic hapi implementation
+## Hapi Web Server
+
+Basic hapi implementation by [justnada](https://github.com/justnada).
