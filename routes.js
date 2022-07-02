@@ -2,35 +2,38 @@ const routes = [
   {
     method: "GET",
     path: "/",
-    handler: (req, res) => {
-      return "Homepage";
+    handler: (req, h) => {
+      const response = h.response("Homepage");
+      response.header("Nda", "Love u");
+      response.code(200);
+      return response;
     },
   },
   {
     method: "*",
     path: "/",
-    handler: (req, res) => {
+    handler: (req, h) => {
       return "403";
     },
   },
   {
     method: "GET",
     path: "/about",
-    handler: (req, res) => {
+    handler: (req, h) => {
       return "About";
     },
   },
   {
     method: "*",
     path: "/about",
-    handler: (req, res) => {
+    handler: (req, h) => {
       return "403";
     },
   },
   {
     method: "GET",
     path: "/user/{username?}",
-    handler: (req, res) => {
+    handler: (req, h) => {
       const { username = "stranger" } = req.params;
       const { lang } = req.query;
 
@@ -44,14 +47,14 @@ const routes = [
   {
     method: "*",
     path: "/{any*}",
-    handler: (req, res) => {
+    handler: (req, h) => {
       return "404";
     },
   },
   {
     method: "POST",
     path: "/login",
-    handler: (req, res) => {
+    handler: (req, h) => {
       const { username, password } = req.payload;
       return `Welcome ${username}!`;
     },
