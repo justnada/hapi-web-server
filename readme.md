@@ -6,8 +6,5 @@ Basic hapi implementation by [justnada](https://github.com/justnada).
 
 ```bash
 nmp install
-```
-
-```bash
 npm run start
 ```
